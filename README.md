@@ -29,6 +29,7 @@ For instance, a lexical entry item might be defined by the following parts (refe
   - [collocations](docs/word-collocations-part.md) (LEX): collocations.
   - [links](https://github.com/vedph/cadmus-general/blob/master/docs/fr.pin-links.md):`law` related law articles. One could link article numbers to online references like [Brocardi.it](https://www.brocardi.it) e.g. <https://www.brocardi.it/codice-di-procedura-civile/libro-secondo/titolo-iii/capo-iii/sezione-i/art368.html> for `Art. 368 c.p.c`.
 - *editorial*:
+  - [references](https://github.com/vedph/cadmus-general/blob/master/docs/doc-references.md): generic documental references for this entry.
   - [note](https://github.com/vedph/cadmus-general/blob/master/docs/note.md)
 
 ## TEI Example
