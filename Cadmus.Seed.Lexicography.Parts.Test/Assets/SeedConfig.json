@@ -1,0 +1,60 @@
+{
+  "facets": [
+    {
+      "typeId": "it.vedph.lexicography.lemma",
+      "name": "lemma",
+      "description": "Lemma.",
+      "colorKey": "31AB54",
+      "groupKey": "form",
+      "sortKey": "01"
+    },
+    {
+      "typeId": "it.vedph.lexicography.word-forms",
+      "name": "forms",
+      "description": "Word forms.",
+      "colorKey": "31AB54",
+      "groupKey": "form",
+      "sortKey": "02"
+    },
+    {
+      "typeId": "it.vedph.lexicography.word-senses",
+      "name": "senses",
+      "description": "Word senses.",
+      "colorKey": "31AB54",
+      "groupKey": "form",
+      "sortKey": "03"
+    },
+    {
+      "typeId": "it.vedph.lexicography.word-collocations",
+      "name": "collocations",
+      "description": "Word collocations.",
+      "colorKey": "31AB54",
+      "groupKey": "form",
+      "sortKey": "04"
+    }
+  ],
+  "seed": {
+    "options": {
+      "seed": 1,
+      "baseTextPartTypeId": "it.vedph.token-text",
+      "users": [ "zeus" ],
+      "partRoles": [],
+      "fragmentRoles": []
+    },
+    "partSeeders": [
+      {
+        "id": "seed.it.vedph.lexicography.lemma"
+      },
+      {
+        "id": "seed.it.vedph.lexicography.word-forms"
+      },
+      {
+        "id": "seed.it.vedph.lexicography.word-senses"
+      },
+      {
+        "id": "seed.it.vedph.lexicography.word-collocations"
+      }
+    ],
+    "fragmentSeeders": []
+  }
+}

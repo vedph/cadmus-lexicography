@@ -4,7 +4,17 @@ using System.Text;
 namespace Cadmus.Lexicography.Parts;
 
 /// <summary>
-/// A words collocation pattern.
+/// A words collocation pattern. This is a sequence of tokens, each
+/// representing the word class (part of speech) for each word building
+/// the collocation pattern. For example, a collocation like
+/// "strong tea" would have the pattern ADJ+NOUN. Usually one word in the
+/// pattern is the head token, because it is the lexical entry word
+/// including this collocation. So, if the lexical entry word is "tea",
+/// then the 2nd token (NOUN) is the head.
+/// <para>Examples then provide real-world sentences illustrating the use
+/// of the collocation. These include 1 literal per token (each having the
+/// ordinal number of the token it refers to in the pattern), plus eventual
+/// connective text represented by literals whose token number is 0.</para>
 /// </summary>
 public class WordCollocation
 {
