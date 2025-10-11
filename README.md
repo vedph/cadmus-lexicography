@@ -22,7 +22,7 @@ For instance, a lexical entry item might be defined by the following parts (refe
   - [decorated counts](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md): frequencies.
   - [asserted historical dates](https://github.com/vedph/cadmus-general/blob/master/docs/asserted-historical-dates.md): date of first attestation and other eventual dates.
 - *morphology*:
-  - [WordFormsPart](docs/word-forms-part.md):`infl` (LEX): inflection.
+  - [WordFormsPart](docs/word-forms-part.md) (LEX): inflection.
 - *sense*:
   - [WordSensesPart](docs/word-senses-part.md) (LEX): senses.
   - [comment](https://github.com/vedph/cadmus-general/blob/master/docs/comment.md): discussion about the lemma.
