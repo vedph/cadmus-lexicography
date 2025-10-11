@@ -20,6 +20,7 @@ For instance, a lexical entry item might be defined by the following parts (refe
   - [LemmaPart](docs/lemma-part.md) (LEX)\*
   - [links](https://vedph.github.io/cadmus-doc/models/(https://github.com/vedph/cadmus-general/blob/master/docs/fr.pin-links.md).md):`entry` related entries. Related: `lemon:relatedEntry`, `lemon:relation`.
   - [decorated counts](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md): frequencies.
+  - [asserted historical dates](https://github.com/vedph/cadmus-general/blob/master/docs/asserted-historical-dates.md): date of first attestation and other eventual dates.
 - *morphology*:
   - [WordFormsPart](docs/word-forms-part.md):`infl` (LEX): inflection.
 - *sense*:
