@@ -1,8 +1,6 @@
 ﻿using System;
-using Xunit;
 using Cadmus.Core;
 using System.Collections.Generic;
-using System.Linq;
 using Cadmus.Seed.Lexicography.Parts;
 
 namespace Cadmus.Lexicography.Parts.Test;
@@ -56,17 +54,60 @@ public sealed class LemmaPartTest
     {
         LemmaPart part = GetEmptyPart();
         part.Lid = "test";
-        // TODO: set only the properties required for pins
-        // in a predictable way so we can test them
+
+        // create 3 predictable word forms
+        part.Forms = [];
+        for (int i = 1; i <= 3; i++)
+        {
+            part.Forms.Add(new WordForm
+            {
+                Type = $"t{i}",
+                Value = $"v{i}",
+                // set Pos for first two forms only to get pos pins
+                Pos = i == 1 ? "n" : (i == 2 ? "v" : null)
+            });
+        }
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
-        Assert.Single(pins);
 
-        // lid
-        DataPin? pin = pins.Find(p => p.Name == "id" && p.Value == "steph");
-        Assert.NotNull(pin);
-        TestHelper.AssertPinIds(part, pin!);
+        // expected pins:
+        // 1 lid + 3 value + 3 dec-value + 2 pos = 9
+        Assert.Equal(9, pins.Count);
 
-        // TODO test other pins
+        // LID
+        DataPin? lidPin = pins.Find(p => p.Name == "lid" && p.Value == "test");
+        Assert.NotNull(lidPin);
+        TestHelper.AssertPinIds(part, lidPin!);
+
+        // value pins
+        for (int i = 1; i <= 3; i++)
+        {
+            string expected = $"v{i}";
+            DataPin? p = pins.Find(pin => pin.Name == "value" && pin.Value == expected);
+            Assert.NotNull(p);
+            TestHelper.AssertPinIds(part, p!);
+        }
+
+        // dec-value pins: format "type[pos]:value" (pos part omitted if empty)
+        var expectedDec = new List<string>
+        {
+            "t1[n]:v1",
+            "t2[v]:v2",
+            "t3:v3"
+        };
+        foreach (string dec in expectedDec)
+        {
+            DataPin? p = pins.Find(pin => pin.Name == "dec-value" && pin.Value == dec);
+            Assert.NotNull(p);
+            TestHelper.AssertPinIds(part, p!);
+        }
+
+        // pos pins (unique)
+        foreach (string pos in new[] { "n", "v" })
+        {
+            DataPin? p = pins.Find(pin => pin.Name == "pos" && pin.Value == pos);
+            Assert.NotNull(p);
+            TestHelper.AssertPinIds(part, p!);
+        }
     }
 }
