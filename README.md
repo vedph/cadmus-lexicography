@@ -67,3 +67,37 @@ This is a generic TEI example for a lexical entry representing the English verb 
   </etym>
 </entry>
 ```
+
+## Lemon Example
+
+This Turtle example represents the same lexical entry using the Lemon model, incorporating `LexInfo` for linguistic annotations.
+
+```turtle
+@prefix lemon: <http://www.lemon-model.net/lemon#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/lexicon#> .
+
+ex:lex001 a ontolex:LexicalEntry ;
+    ontolex:canonicalForm [
+        ontolex:writtenRep "run"@en ;
+        lexinfo:partOfSpeech lexinfo:verb ;
+        lexinfo:subcategorizationFrame lexinfo:IntransitiveFrame
+    ] ;
+    ontolex:sense ex:sense1, ex:sense2 ;
+    dct:source "Old English 'rinnan', later influenced by Old Norse 'renna'" .
+
+ex:sense1 a ontolex:LexicalSense ;
+    ontolex:definition "To move swiftly on foot so that both feet leave the ground during each stride."@en ;
+    lexinfo:domain lexinfo:PhysicalActivity ;
+    lexinfo:register lexinfo:neutralRegister ;
+    ontolex:example "She runs every morning before breakfast."@en .
+
+ex:sense2 a ontolex:LexicalSense ;
+    ontolex:definition "To operate or function, especially of machines or systems."@en ;
+    lexinfo:domain lexinfo:Technology ;
+    lexinfo:register lexinfo:neutralRegister ;
+    ontolex:example "The engine runs smoothly even in cold weather."@en .
+```
