@@ -1,6 +1,6 @@
 # LemmaPart
 
-- 🚩 `it.vedph.lexicography.word-lemma`
+- 🚩 `it.vedph.lexicography.lemma`
 
 Related: `<form type="lemma">`, `lemon:LexicalEntry`, `lemon:canonicalForm`.
 
