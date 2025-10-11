@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Cadmus.Core;
-using Cadmus.Refs.Bricks;
 using Fusi.Tools.Configuration;
 
 namespace Cadmus.Lexicography.Parts;
 
 /// <summary>
-/// Word's senses.
-/// <para>Tag: <c>it.vedph.lexicography.word-senses</c>.</para>
+/// Words collocations part.
+/// <para>Tag: <c>it.vedph.lexicography.word-collocations</c>.</para>
 /// </summary>
-[Tag("it.vedph.lexicography.word-senses")]
-public sealed class WordSensesPart : PartBase
+[Tag("it.vedph.lexicography.word-collocations")]
+public sealed class WordCollocationsPart : PartBase
 {
     /// <summary>
-    /// Gets or sets the senses.
+    /// Gets or sets the collocations.
     /// </summary>
-    public List<WordSense> Senses { get; set; } = [];
+    public List<WordCollocation> Collocations { get; set; } = [];
 
     /// <summary>
     /// Get all the key=value pairs (pins) exposed by the implementor.
@@ -25,27 +25,22 @@ public sealed class WordSensesPart : PartBase
     /// <param name="item">The optional item. The item with its parts
     /// can optionally be passed to this method for those parts requiring
     /// to access further data.</param>
-    /// <returns>The pins: <c>tot-count</c> and a collection of pins</returns>
+    /// <returns>The pins: <c>tot-count</c> and a collection of pins.</returns>
     public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
     {
         DataPinBuilder builder = new();
 
-        builder.Set("tot", Senses?.Count ?? 0, false);
+        builder.Set("tot", Collocations?.Count ?? 0, false);
 
-        if (Senses?.Count > 0)
+        if (Collocations?.Count > 0)
         {
-            foreach (WordSense sense in Senses)
+            HashSet<string> pos = [];
+            foreach (WordCollocation collocation in Collocations)
             {
-                if (!string.IsNullOrEmpty(sense.Eid))
-                    builder.AddValue("sense-id", sense.Eid);
-
-                if (sense.RelatedIds?.Count > 0)
+                if (collocation.Tokens.Count > 0)
                 {
-                    foreach (AssertedCompositeId id in sense.RelatedIds)
-                    {
-                        if (!string.IsNullOrEmpty(id.Target?.Gid))
-                            builder.AddValue("related-id", id.Target.Gid);
-                    }
+                    pos.Add(string.Join("+",
+                        collocation.Tokens.Select(t => t.Pos)));
                 }
             }
         }
@@ -63,15 +58,12 @@ public sealed class WordSensesPart : PartBase
         [
             new DataPinDefinition(DataPinValueType.Integer,
                "tot-count",
-               "The total count of senses."),
+               "The total count of collocations."),
             new DataPinDefinition(DataPinValueType.String,
-                "sense-id",
-                "The IDs of the senses.",
-                "M"),
-            new DataPinDefinition(DataPinValueType.String,
-                "related-id",
-                "The IDs of the related senses.",
-                "M")
+               "pos",
+               "The part-of-speech tag sequence of a collocation, " +
+               "i.e. the concatenation with '+' of the POS tags of its tokens.",
+               "M"),
         ]);
     }
 
@@ -85,20 +77,20 @@ public sealed class WordSensesPart : PartBase
     {
         StringBuilder sb = new();
 
-        sb.Append("[WordSenses]");
+        sb.Append("[WordCollocations]");
 
-        if (Senses?.Count > 0)
+        if (Collocations?.Count > 0)
         {
             sb.Append(' ');
             int n = 0;
-            foreach (WordSense entry in Senses)
+            foreach (var entry in Collocations)
             {
                 if (++n > 3) break;
                 if (n > 1) sb.Append("; ");
                 sb.Append(entry);
             }
-            if (Senses.Count > 3)
-                sb.Append("...(").Append(Senses.Count).Append(')');
+            if (Collocations.Count > 3)
+                sb.Append("...(").Append(Collocations.Count).Append(')');
         }
 
         return sb.ToString();

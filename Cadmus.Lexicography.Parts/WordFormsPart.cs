@@ -75,10 +75,12 @@ public sealed class WordFormsPart : PartBase
             new DataPinDefinition(DataPinValueType.String,
                 "dec-value",
                 "The unique decorated values of the forms, " +
-                    "in the form type[pos]:value."),
+                    "in the form type[pos]:value.",
+                "M"),
             new DataPinDefinition(DataPinValueType.String,
                 "pos",
-                "The unique POS tags used in the forms.")
+                "The unique POS tags used in the forms.",
+                "M")
         ]);
     }
 
