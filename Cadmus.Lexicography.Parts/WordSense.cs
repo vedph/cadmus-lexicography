@@ -1,5 +1,6 @@
 ﻿using Cadmus.Refs.Bricks;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Cadmus.Lexicography.Parts;
 
@@ -43,4 +44,16 @@ public class WordSense
     /// Examples for this sense.
     /// </summary>
     public List<WordSenseExample>? Examples { get; set; }
+
+    /// <summary>
+    /// Returns a string representation of this instance.
+    /// </summary>
+    /// <returns>String.</returns>
+    public override string ToString()
+    {
+        StringBuilder sb = new();
+        if (!string.IsNullOrEmpty(Eid)) sb.Append(Eid).Append(": ");
+        sb.Append(Definition);
+        return sb.ToString();
+    }
 }
