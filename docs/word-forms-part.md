@@ -1,5 +1,7 @@
 # WordFormsPart
 
+- 🚩 `it.vedph.lexicography.word-forms`
+
 Related: `<form type="inflected">`, `lemon:inflectedForm`. Role-dependent thesauri.
 
 - `forms`\* (`WordForm[]`):

@@ -47,8 +47,7 @@ public sealed class WordFormsPart : PartBase
     /// <param name="item">The optional item. The item with its parts
     /// can optionally be passed to this method for those parts requiring
     /// to access further data.</param>
-    /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-    /// these keys: ....</returns>
+    /// <returns>The pins: <c>tot-count</c> and a collection of pins.</returns>
     public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
     {
         DataPinBuilder builder = new();

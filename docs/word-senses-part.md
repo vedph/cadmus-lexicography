@@ -1,5 +1,7 @@
 # WordSensesPart
 
+- 🚩 `it.vedph.lexicography.word-senses`
+
 Related: `<sense>/<def>`, `lemon:sense`, `lemon:definition`.
 
 - `senses`\* (`WordSense[]`):
