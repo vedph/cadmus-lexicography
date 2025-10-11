@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Lexicography.Parts", "Cadmus.Lexicography.Parts\Cadmus.Lexicography.Parts.csproj", "{9270422D-A673-496A-82DE-5BD1749B10B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Seed.Lexicography.Parts", "Cadmus.Seed.Lexicography.Parts\Cadmus.Seed.Lexicography.Parts.csproj", "{41D17A04-A85C-4F32-96FB-366CB632C528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Lexicography.Services", "Cadmus.Lexicography.Services\Cadmus.Lexicography.Services.csproj", "{7B5233F6-6691-41D7-A055-00A7AD13AD9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Lexicography.Parts.Test", "Cadmus.Lexicography.Parts.Test\Cadmus.Lexicography.Parts.Test.csproj", "{8A220F0E-7196-4690-8DF0-440D0D494EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Seed.Lexicography.Parts.Test", "Cadmus.Seed.Lexicography.Parts.Test\Cadmus.Seed.Lexicography.Parts.Test.csproj", "{C706A5FE-51F2-467D-9FCF-21551819A70F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		Pack.bat = Pack.bat
+		Push.bat = Push.bat
+		PushLocal.bat = PushLocal.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9270422D-A673-496A-82DE-5BD1749B10B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9270422D-A673-496A-82DE-5BD1749B10B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9270422D-A673-496A-82DE-5BD1749B10B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9270422D-A673-496A-82DE-5BD1749B10B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D17A04-A85C-4F32-96FB-366CB632C528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D17A04-A85C-4F32-96FB-366CB632C528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D17A04-A85C-4F32-96FB-366CB632C528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D17A04-A85C-4F32-96FB-366CB632C528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5233F6-6691-41D7-A055-00A7AD13AD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5233F6-6691-41D7-A055-00A7AD13AD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5233F6-6691-41D7-A055-00A7AD13AD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5233F6-6691-41D7-A055-00A7AD13AD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A220F0E-7196-4690-8DF0-440D0D494EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A220F0E-7196-4690-8DF0-440D0D494EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A220F0E-7196-4690-8DF0-440D0D494EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A220F0E-7196-4690-8DF0-440D0D494EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C706A5FE-51F2-467D-9FCF-21551819A70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C706A5FE-51F2-467D-9FCF-21551819A70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C706A5FE-51F2-467D-9FCF-21551819A70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C706A5FE-51F2-467D-9FCF-21551819A70F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F27BFCD-08EA-43C9-974C-351F1F799CAF}
+	EndGlobalSection
+EndGlobal
