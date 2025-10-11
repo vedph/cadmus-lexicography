@@ -42,20 +42,20 @@ public class WordForm
 
     /// <summary>
     /// Grammatical features, e.g. <c>Number=Plur</c>, <c>Tense=Past</c>, or
-    /// any other kind of feature. Usually from thesaurus
+    /// any other kind of feature. Usually from hierarchical thesaurus
     /// <c>lex-word-form-features</c>.
     /// </summary>
     public List<string>? Features { get; set; }
 
     /// <summary>
     /// Usage or other tags, e.g. <c>archaic</c>, <c>informal</c>, etc. Usually
-    /// from thesaurus <c>lex-word-form-tags</c>. Related: TEI <c>usg</c>,
-    /// Lemon <c>usage</c>, <c>context</c>.
+    /// from hierarchical thesaurus <c>lex-word-form-tags</c>. Related:
+    /// TEI <c>usg</c>, Lemon <c>usage</c>, <c>context</c>.
     /// </summary>
     public List<string>? Tags { get; set; }
 
     /// <summary>
-    /// A general note about this form.
+    /// A general note about this form. Related to TEI <c>note</c>.
     /// </summary>
     public string? Note { get; set; }
 
