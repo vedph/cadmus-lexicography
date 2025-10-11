@@ -1,10 +1,8 @@
 ﻿using Cadmus.Core;
 using Cadmus.Seed.Lexicography.Parts;
-using Cadmus.Lexicography.Parts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Xunit;
 
 namespace Cadmus.Lexicography.Parts.Test;
 
