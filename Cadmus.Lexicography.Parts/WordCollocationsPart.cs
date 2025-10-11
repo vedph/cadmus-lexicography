@@ -43,6 +43,7 @@ public sealed class WordCollocationsPart : PartBase
                         collocation.Tokens.Select(t => t.Pos)));
                 }
             }
+            builder.AddValues("pos", pos);
         }
 
         return builder.Build(this);

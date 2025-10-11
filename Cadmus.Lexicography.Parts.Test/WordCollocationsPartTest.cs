@@ -74,25 +74,48 @@ public sealed class WordCollocationsPartTest
     {
         WordCollocationsPart part = GetEmptyPart();
 
-        for (int n = 1; n <= 3; n++)
+        // create 3 collocations with predictable POS sequences
+        part.Collocations = [];
+        HashSet<string> expectedPos = [];
+        string[][] posSeqs =
+        [
+            ["ADJ", "NOUN"],
+            ["ADJ", "NOUN", "VERB"],
+            ["NOUN", "VERB"]
+        ];
+
+        for (int i = 0; i < 3; i++)
         {
-            // TODO add entry to part setting its pin-related
-            // properties in a predictable way, so we can test them
+            WordCollocation coll = new()
+            {
+                Rank = (short)(i + 1),
+                Tokens = []
+            };
+            foreach (string p in posSeqs[i])
+                coll.Tokens.Add(new WordCollocationToken { Pos = p });
+
+            string joined = string.Join("+", posSeqs[i]);
+            expectedPos.Add(joined);
+
+            part.Collocations.Add(coll);
         }
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
 
-        Assert.Equal(5, pins.Count);
+        // 1 tot-count + one pin per unique pos-sequence
+        Assert.Equal(1 + expectedPos.Count, pins.Count);
 
         DataPin? pin = pins.Find(p => p.Name == "tot-count");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
         Assert.Equal("3", pin!.Value);
 
-        // TODO: assert counts and values e.g.:
-        // pin = pins.Find(p => p.Name == "pos-bottom-count");
-        // Assert.NotNull(pin);
-        // TestHelper.AssertPinIds(part, pin!);
-        // Assert.Equal("2", pin.Value);
+        // assert every expected pos-sequence exists as a pin
+        foreach (string pos in expectedPos)
+        {
+            DataPin? p = pins.Find(x => x.Name == "pos" && x.Value == pos);
+            Assert.NotNull(p);
+            TestHelper.AssertPinIds(part, p!);
+        }
     }
 }
