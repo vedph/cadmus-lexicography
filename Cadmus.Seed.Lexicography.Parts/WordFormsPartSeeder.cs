@@ -25,16 +25,15 @@ public sealed class WordFormsPartSeeder : PartSeederBase
         string[] suffixes = ["off", "up", "out", "down"];
         string[] posTags =
         [
-            "NOUN", "VERB", "ADJ", "ADV", "PRON", "DET", "ADP", "NUM", "CONJ", "INTJ"
+            "noun", "verb", "adj", "adv", "pron", "det", "prep"
         ];
         string[] featurePool =
         [
-            "Number=Sing", "Number=Plur", "Tense=Past", "Tense=Pres",
-            "Mood=Indicative", "Degree=Cmp"
+            "number:singular", "number:plural", "gender:masculine", "gender:feminine"
         ];
         string[] tagPool =
         [
-            "archaic", "informal", "regional", "technical", "literary"
+            "obsolete", "informal", "technical"
         ];
 
         for (int i = 0; i < count; i++)

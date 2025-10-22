@@ -103,3 +103,7 @@ ex:sense2 a ontolex:LexicalSense ;
     lexinfo:register lexinfo:neutralRegister ;
     ontolex:example "The engine runs smoothly even in cold weather."@en .
 ```
+
+## History
+
+- 2025-10-22: more thesauri.

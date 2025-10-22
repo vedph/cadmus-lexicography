@@ -18,7 +18,7 @@ public sealed class WordCollocationsPartSeeder : PartSeederBase
 {
     private static List<WordCollocation> GenerateCollocations(Faker f)
     {
-        string[] posTags = ["NOUN", "VERB", "ADJ", "ADV", "DET", "PREP", "PRON"];
+        string[] posTags = ["noun", "verb", "adj", "adv", "det", "prep", "pron"];
         List<WordCollocation> collocations = [];
         HashSet<string> seen = new(StringComparer.OrdinalIgnoreCase);
 
