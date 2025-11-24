@@ -106,4 +106,10 @@ ex:sense2 a ontolex:LexicalSense ;
 
 ## History
 
+### 1.0.0
+
+- 2025-11-24: ⚠️ upgraded to NET 10.
+
+### 0.0.1
+
 - 2025-10-22: more thesauri.
