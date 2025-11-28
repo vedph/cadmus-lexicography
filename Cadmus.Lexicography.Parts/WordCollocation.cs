@@ -19,6 +19,12 @@ namespace Cadmus.Lexicography.Parts;
 public class WordCollocation
 {
     /// <summary>
+    /// A generic tag for this pattern. For instance, it could be used to
+    /// target a specific sense of the head word.
+    /// </summary>
+    public string? Tag { get; set; }
+
+    /// <summary>
     /// The pattern frequency rank. Lower is more frequent.
     /// Zero means unknown or not specified.
     /// </summary>
@@ -46,6 +52,7 @@ public class WordCollocation
     public override string ToString()
     {
         StringBuilder sb = new();
+        if (!string.IsNullOrEmpty(Tag)) sb.Append($"{Tag}: ");
         if (Rank > 0) sb.Append($"({Rank}) ");
         sb.Append(string.Join(" ", Tokens));
         return sb.ToString();

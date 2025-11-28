@@ -3,6 +3,7 @@
 - 🚩 `it.vedph.lexicography.word-collocations`
 
 - `collocations`\* (`WordCollocation[]`):
+  - `tag` (`string`) 📚 `lex-word-collocation-tags`: generic tag. When collocations change according to sense, this tag can be used to specify the sense they refer to.
   - `rank` (`short`)
   - `tokens`\* (`WordCollocationToken[]`):
     - `pos`\* (`string` 📚 `lex-word-ctoken-pos-tags`, hierarchical): POS tag.
