@@ -106,6 +106,10 @@ ex:sense2 a ontolex:LexicalSense ;
 
 ## History
 
+### 1.0.2
+
+- 2026-01-19: updated packages.
+
 ### 1.0.1
 
 - 2025-11-28: added tag to word collocation.
