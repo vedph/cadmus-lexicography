@@ -106,6 +106,10 @@ ex:sense2 a ontolex:LexicalSense ;
 
 ## History
 
+### 2.0.0
+
+- 2026-01-28: renamed `WordCollocationExample` to `WordCollocationExampleToken`.
+
 ### 1.0.2
 
 - 2026-01-19: updated packages.

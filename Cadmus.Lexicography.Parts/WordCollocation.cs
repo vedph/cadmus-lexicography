@@ -12,9 +12,15 @@ namespace Cadmus.Lexicography.Parts;
 /// including this collocation. So, if the lexical entry word is "tea",
 /// then the 2nd token (NOUN) is the head.
 /// <para>Examples then provide real-world sentences illustrating the use
-/// of the collocation. These include 1 literal per token (each having the
-/// ordinal number of the token it refers to in the pattern), plus eventual
-/// connective text represented by literals whose token number is 0.</para>
+/// of the collocation. There can be 0-N examples for the collocation, each
+/// built of its <see cref="WordCollocationExampleToken"/>'s. These example
+/// tokens are not in a 1:1 relationship with the pattern tokens; they are
+/// just a way of splitting the example's text so that each portion can be
+/// either just connective text or be linked to a specific pattern token.
+/// For instance, for pattern tokens ADJ+NOUN an example like "my strong tea"
+/// has 3 tokens: connective "my" (no pattern token), pattern token 1 "strong",
+/// and pattern token 2 "tea".
+/// </para>
 /// </summary>
 public class WordCollocation
 {
@@ -31,17 +37,17 @@ public class WordCollocation
     public short Rank { get; set; }
 
     /// <summary>
-    /// The pattern's tokens.
+    /// The pattern's tokens, in their order.
     /// </summary>
     public List<WordCollocationToken> Tokens { get; set; } = [];
 
     /// <summary>
     /// The pattern's examples.
     /// </summary>
-    public List<WordCollocationExample>? Examples { get; set; }
+    public List<WordCollocationExampleToken>? Examples { get; set; }
 
     /// <summary>
-    /// A note about this pattern.
+    /// A free text note about this pattern.
     /// </summary>
     public string? Note { get; set; }
 

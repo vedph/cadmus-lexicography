@@ -2,7 +2,7 @@
 
 /// <summary>
 /// A literal instance of a collocation pattern token.
-/// Used to build <see cref="WordCollocationExample"/>'s.
+/// Used to build <see cref="WordCollocationExampleToken"/>'s.
 /// </summary>
 public class WordCollocationLiteral
 {

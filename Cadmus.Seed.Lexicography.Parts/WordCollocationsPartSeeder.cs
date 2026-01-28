@@ -79,9 +79,9 @@ public sealed class WordCollocationsPartSeeder : PartSeederBase
         };
     }
 
-    private static WordCollocationExample GenerateExample(Faker f, int tokensCount)
+    private static WordCollocationExampleToken GenerateExample(Faker f, int tokensCount)
     {
-        WordCollocationExample ex = new()
+        WordCollocationExampleToken ex = new()
         {
             TokenNr = (short)(f.Random.Bool(0.2f) ? 0 : f.Random.Int(1, tokensCount)),
             Literals = []
