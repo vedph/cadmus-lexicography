@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Pack.bat" />
+    <File Path="Push.bat" />
+    <File Path="PushLocal.bat" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Cadmus.Lexicography.Parts.Test/Cadmus.Lexicography.Parts.Test.csproj" />
+  <Project Path="Cadmus.Lexicography.Parts/Cadmus.Lexicography.Parts.csproj" />
+  <Project Path="Cadmus.Lexicography.Services/Cadmus.Lexicography.Services.csproj" />
+  <Project Path="Cadmus.Seed.Lexicography.Parts.Test/Cadmus.Seed.Lexicography.Parts.Test.csproj" />
+  <Project Path="Cadmus.Seed.Lexicography.Parts/Cadmus.Seed.Lexicography.Parts.csproj" />
+</Solution>
