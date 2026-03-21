@@ -1,0 +1,42 @@
+{
+  "parts": {
+    "it.vedph.lexicography.lemma": {
+      "thesauriIds": [
+        "lex-word-form-types",
+        "lex-word-form-prefixes",
+        "lex-word-form-suffixes",
+        "lex-pos-tags",
+        "lex-word-form-features",
+        "lex-word-form-tags"
+      ]
+    },
+    "it.vedph.lexicography.word-collocations": {
+      "thesauriIds": [
+        "lex-word-collocation-tags",
+        "lex-word-ctoken-pos-tags",
+        "lex-word-ctoken-features",
+        "lex-word-cliteral-tags"
+      ]
+    },
+    "it.vedph.lexicography.word-forms": {
+      "thesauriIds": [
+        "lex-word-form-types",
+        "lex-word-form-prefixes",
+        "lex-word-form-suffixes",
+        "lex-pos-tags",
+        "lex-word-form-features",
+        "lex-word-form-tags"
+      ]
+    },
+    "it.vedph.lexicography.word-senses": {
+      "thesauriIds": [
+        "lex-word-sense-tags",
+        "asserted-id-scopes",
+        "asserted-id-tags",
+        "doc-reference-types",
+        "doc-reference-tags",
+        "asserted-id-features"
+      ]
+    }
+  }
+}
