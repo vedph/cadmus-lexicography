@@ -106,6 +106,10 @@ ex:sense2 a ontolex:LexicalSense ;
 
 ## History
 
+### 2.0.2
+
+- 2026-06-12: updated packages.
+
 ### 2.0.1
 
 - 2026-02-15: updated packages.
